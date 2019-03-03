@@ -1,0 +1,43 @@
+$color-bg: #f4f4f4;
+$color-font: #444444;
+
+body {
+    margin: 0;
+    padding: 0;
+    color: $color-font;
+    background-color: $color-bg;
+}
+
+#app {
+
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    // sprawdzam czy ładowanie grafiki z css działa poprawenie
+    &::after {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        background: url('../images/logo.png') no-repeat;
+        height: 50px;
+        width: 50px;
+        display: block;
+        content: '';
+        animation: 5s infinite logo-rotate;
+    }
+}
+
+@keyframes logo-rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
